@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deb Hansen | Theatre Arts Educator, Director & Yoga Instructor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --light-teal: #7dd3c0;
+            --dark-green: #1a4d2e;
+            --white: #ffffff;
+            --blue: #2c5f8d;
+            --light-bg: #f0f8f6;
+            --text-dark: #2c3e50;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--dark-green);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--light-teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-teal);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--light-teal);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 1rem auto;
+            line-height: 1.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--dark-green);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--light-teal);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: var(--blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .highlight-box {
+            background-color: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--light-teal);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--light-teal);
+            border: 3px solid var(--dark-green);
+        }
+
+        .experience-item h4 {
+            color: var(--blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-item .dates {
+            color: var(--dark-green);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--dark-green);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .service-description {
+            color: var(--text-dark);
+            margin: 1rem 0;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--light-teal) 0%, var(--blue) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .testimonial-box {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--text-dark);
+            border-left: 3px solid var(--light-teal);
+        }
+
+        .pricing-note {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: var(--dark-green);
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .award-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--light-teal);
+        }
+
+        .award-item strong {
+            color: var(--dark-green);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--blue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+        }
+
+        .contact-section h2::after {
+            background-color: var(--light-teal);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            background-color: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item strong {
+            color: var(--light-teal);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--light-teal);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .hero-content {
+                flex-direction: row;
+                text-align: left;
+                gap: 3rem;
+            }
+
+            .hero-text {
+                flex: 1;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .contact-info {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="headshot.jpg" alt="Deb Hansen" class="hero-image">
+            <div class="hero-text">
+                <h1>Deb Hansen</h1>
+                <p class="hero-subtitle">Theatre Arts Educator | Director | Performance Coach | Yoga Instructor</p>
+                <p>With over 25 years of experience in theatre education and artistic direction, I am dedicated to nurturing creativity, building confidence, and helping students and performers discover their authentic voice on stage and in life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I am a passionate theatre arts educator, director, and certified yoga instructor with a career spanning more than two decades. My journey in the performing arts has taken me from university stages to middle and high school classrooms, and into the vibrant Northern Virginia theatre community.</p>
+            
+            <div class="highlight-box">
+                <p>My mission is to create transformative experiences through the performing arts. Whether I'm directing a production, coaching an aspiring actor for college auditions, or leading a yoga class to help performers connect with their bodies, I believe in the power of authentic expression and collaborative creativity.</p>
+            </div>
+
+            <p>I hold a Master of Arts in English from Western Illinois University and a Bachelor of Arts in English from the University of Maryland. I trained at prestigious institutions including the Atlantic Acting School in NYC and as a Juilliard Directing Fellow in 2012, where I was one of only 15 secondary educators chosen nationwide.</p>
+
+            <p>As a certified yoga instructor (RYT 200, CYT 200), I integrate mindfulness and body awareness into my teaching practice, helping actors develop the physical presence and emotional depth that conservatory programs cultivate.</p>
+
+            <p>My students have been accepted into top theatre programs including Carnegie Mellon, NYU Tisch School of the Arts, Juilliard, Columbia, and many others. I take pride in not just preparing students for college, but in helping them discover their passion and unique artistic voice.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>My Experience</h2>
+        
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <h4>Private Instructor & Performance Coach</h4>
+                <p class="dates">1998 - Present</p>
+                <p>Providing one-on-one coaching in monologue performance and audition preparation. My students have been accepted into prestigious theatre programs including Carnegie Mellon, NYU Tisch, University of the Arts, Columbia, Pace University, and many more top institutions.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Theatre Educator | ARTfactory, Manassas VA</h4>
+                <p class="dates">January 2022 - Present</p>
+                <p>Instructor for Improvisation, Monologue Performance, Playwriting, and Yoga. Integrating mindfulness practices with performance techniques.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Producer & Managing Director | ARTfactory</h4>
+                <p class="dates">2022 - 2024</p>
+                <p>Led Rooftop Productions' 10x10 Playwriting Festival. Oversaw playwright submissions, adjudication, auditions, rehearsals, and full festival production, mentoring directors and actors throughout the creative process.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Artistic Director & Theatre Educator | Colonial Forge High School</h4>
+                <p class="dates">August 2007 - 2021</p>
+                <p>Produced and directed 8-10 productions annually. Founded and directed the Student Playwriting One Act Festival (2010-2020). Produced the inaugural joint musical theatre performance featuring 37 faculty and staff alongside students. Taught four levels of theatre arts and integrated yoga instruction for body awareness.</p>
+                <p><strong>Notable Productions:</strong> Macbeth, The Addams Family, Shrek, A Midsummer Night's Dream, Romeo & Juliet, Much Ado About Nothing, Annie, and many more.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Artistic Director | Rodney Thompson Middle School</h4>
+                <p class="dates">August 2001 - 2007</p>
+                <p>Taught three levels of drama and directed 8-10 productions each school year. Led teams to Gold Trophy wins at Virginia Theatre Association competitions in 2004, 2005, and 2006.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Artistic Director | Spotsylvania High School Theatre</h4>
+                <p class="dates">August 1998 - 2001</p>
+                <p>Created the One-Act Play Festival with first-year students. Taught three levels of Theatre Arts, covering all aspects from performance to technical theatre, directing, and design.</p>
+            </div>
+        </div>
+
+        <h3>Community Theatre</h3>
+        <p>Actively involved in the NoVA Theatre Arts community as both a performer and director. Recent credits include directing <em>Miracle on 34th Street</em> and <em>Doubt: A Parable</em> for Rooftop Productions, and performing in <em>By the Way, Meet Vera Stark</em> and the upcoming <em>Lend Me a Soprano</em>.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">I offer personalized instruction and coaching across four key areas, each designed to help you grow as an artist and performer. My approach values collaboration above all else, creating a supportive environment where creativity can flourish.</p>
+        
+        <div class="services-grid">
+            <!-- Director Service -->
+            <div class="service-card">
+                <h3>Director</h3>
+                <p class="service-description">My directing style values collaboration above all else. I believe in creating a safe, creative space where actors can take risks, explore characters deeply, and discover authentic moments. Whether working on classic texts or new devised work, I guide ensembles through a process that honors both the script and the unique gifts each performer brings to the production.</p>
+                
+                <div class="image-placeholder">[Insert directing work photo here]</div>
+                
+                <p><strong>Recent Directing Work:</strong></p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Miracle on 34th Street (2024)</li>
+                    <li>Doubt: A Parable (2024)</li>
+                    <li>Macbeth, Radium Girls, The Addams Family</li>
+                    <li>Student Playwriting Festivals (2010-2020)</li>
+                </ul>
+
+                <div class="testimonial-box">
+                    [Insert directing testimonial here]
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Pricing & Scheduling:</strong> Based on project scope, rehearsal time, and availability. Contact me for more information about directing services for your next production.
+                </div>
+            </div>
+
+            <!-- Educator Service -->
+            <div class="service-card">
+                <h3>Educator</h3>
+                <p class="service-description">With over 25 years of experience teaching theatre arts at middle school, high school, and adult education levels, I offer comprehensive instruction in all aspects of theatre. My teaching philosophy centers on creating an inviting, supportive classroom where students feel safe to take creative risks and discover their unique voice as artists.</p>
+                
+                <div class="image-placeholder">[Insert teaching work photo here]</div>
+                
+                <p><strong>Teaching Areas:</strong></p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Acting techniques and scene study</li>
+                    <li>Improvisation and creative play</li>
+                    <li>Playwriting workshops</li>
+                    <li>Technical theatre and production</li>
+                    <li>Movement and physicality for actors</li>
+                </ul>
+
+                <div class="testimonial-box">
+                    [Insert teaching testimonial here]
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Pricing & Scheduling:</strong> Based on class format, duration, and group size. Contact me for more information about workshops, classes, or residencies.
+                </div>
+            </div>
+
+            <!-- Coaching Service -->
+            <div class="service-card">
+                <h3>Performance Coaching</h3>
+                <p class="service-description">I specialize in one-on-one coaching for monologue performance and college audition preparation. My students have been accepted into the nation's top theatre programs including Carnegie Mellon, NYU Tisch, Juilliard, Columbia, and many more. Together, we'll work on finding material that showcases your unique strengths, developing authentic character choices, and building confidence for auditions.</p>
+                
+                <div class="image-placeholder">[Insert coaching work photo here]</div>
+                
+                <p><strong>Coaching Services Include:</strong></p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>College audition preparation</li>
+                    <li>Monologue selection and coaching</li>
+                    <li>Scene study and character development</li>
+                    <li>Audition technique and confidence building</li>
+                    <li>Professional audition preparation</li>
+                </ul>
+
+                <div class="testimonial-box">
+                    [Insert coaching testimonial here]
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Pricing & Scheduling:</strong> Based on session length and frequency. Contact me for more information about private coaching packages.
+                </div>
+            </div>
+
+            <!-- Yoga Service -->
+            <div class="service-card">
+                <h3>Yoga for Performers</h3>
+                <p class="service-description">As a certified yoga instructor (RYT 200, CYT 200), I offer specialized yoga classes designed for performers and actors. Drawing from practices used in top conservatory programs, these sessions help develop body awareness, presence, breath control, and the physical flexibility essential for authentic performance. Yoga for performers strengthens the mind-body connection that allows actors to access deeper emotional truths.</p>
+                
+                <div class="image-placeholder">[Insert yoga work photo here]</div>
+                
+                <p><strong>Yoga Offerings:</strong></p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Yoga for actors and performers</li>
+                    <li>Breathwork and vocal warm-ups</li>
+                    <li>Movement and body awareness</li>
+                    <li>Mindfulness for performance anxiety</li>
+                    <li>Private and group classes</li>
+                </ul>
+
+                <div class="testimonial-box">
+                    [Insert yoga testimonial here]
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Pricing & Scheduling:</strong> Based on class format (private or group), duration, and location. Contact me for more information about yoga sessions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Accolades Section -->
+    <section id="awards">
+        <h2>Awards & Accolades</h2>
+        <div class="awards-grid">
+            <div class="award-item">
+                <strong>Juilliard Directing Fellow (2012)</strong>
+                One of only 15 secondary educators chosen as Fellows nationwide for intensive training in script analysis, performance, directing, voice, improvisation, movement, and Meisner technique.
+            </div>
+
+            <div class="award-item">
+                <strong>Teacher of the Year</strong>
+                Colonial Forge High School Teacher of the Year and Stafford County Teacher of the Year 2016 Finalist. Multiple nominations throughout career (2010, 2001, 2002, 2004, 2005).
+            </div>
+
+            <div class="award-item">
+                <strong>Atlantic Acting School Ensemble (2014)</strong>
+                Selected by audition for intensive training in NYC covering script analysis, performance, directing, voice, improvisation, movement, Meisner technique, and Viewpoints.
+            </div>
+
+            <div class="award-item">
+                <strong>Grotowski Technique Training (2017)</strong>
+                Acrobat of the Heart Grotowski Technique Ensemble training in New Hampshire.
+            </div>
+
+            <div class="award-item">
+                <strong>Virginia Theatre Association Success</strong>
+                VTA Champion Director/Advisor (2009), 3rd Place Winner (2010), Gold Level Trophy Winner (2004-2007). Served as VTA Board Member (2007-2009).
+            </div>
+
+            <div class="award-item">
+                <strong>Who's Who Among America's Teachers</strong>
+                Recognized in 1992, 1999, 2000, 2003, 2005, 2009, and 2015 for excellence in education.
+            </div>
+
+            <div class="award-item">
+                <strong>Disney's American Teacher Nominee</strong>
+                Nominated in 2000 and 2001 for outstanding contributions to education.
+            </div>
+
+            <div class="award-item">
+                <strong>Stafford County Fine Arts Leadership Team</strong>
+                Served from 2010-2014, helping shape fine arts education in the district.
+            </div>
+
+            <div class="award-item">
+                <strong>Academic Honors</strong>
+                Dean's List (1986-1988), Alpha Sigma Lambda Honor Society, Phi Kappa Phi Honor Society.
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">I'd love to hear from you! Whether you're interested in private coaching, directing collaboration, workshops, or yoga classes, please reach out to discuss how we can work together.</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:debhansen38@gmail.com">debhansen38@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone</strong>
+                <a href="tel:540-273-1783">540-273-1783</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem;">Located in Haymarket, Virginia, serving the Northern Virginia theatre community and beyond.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Deb Hansen. All rights reserved.</p>
+    </footer>
+</body>
+</html>
