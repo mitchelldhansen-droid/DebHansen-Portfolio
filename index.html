@@ -333,6 +333,83 @@
             color: var(--light-teal);
         }
 
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-teal);
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+
+        .submit-button {
+            background-color: var(--light-teal);
+            color: var(--dark-green);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .submit-button:hover {
+            background-color: #6bc4b0;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
         /* Footer */
         footer {
             background-color: var(--text-dark);
@@ -638,18 +715,43 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Get In Touch</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem;">I'd love to hear from you! Whether you're interested in private coaching, directing collaboration, workshops, or yoga classes, please reach out to discuss how we can work together.</p>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">I'd love to hear from you! Whether you're interested in private coaching, directing collaboration, workshops, or yoga classes, please fill out the form below and I'll get back to you soon.</p>
         
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>Email</strong>
-                <a href="mailto:debhansen38@gmail.com">debhansen38@gmail.com</a>
+        <form action="https://formspree.io/f/xwprdbkv" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            <div class="contact-item">
-                <strong>Phone</strong>
-                <a href="tel:540-273-1783">540-273-1783</a>
+            
+            <div class="form-group">
+                <label for="email">Your Email *</label>
+                <input type="email" id="email" name="email" required>
             </div>
-        </div>
+            
+            <div class="form-group">
+                <label for="phone">Your Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="interest">Area of Interest *</label>
+                <select id="interest" name="interest" required>
+                    <option value="">-- Please Select --</option>
+                    <option value="directing">Directing Services</option>
+                    <option value="coaching">Performance Coaching</option>
+                    <option value="education">Educational Workshops</option>
+                    <option value="yoga">Yoga Classes</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
 
         <p style="margin-top: 2rem;">Located in Haymarket, Virginia, serving the Northern Virginia theatre community and beyond.</p>
     </section>
