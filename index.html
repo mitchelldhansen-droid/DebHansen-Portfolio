@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; form-action 'self' https://formspree.io; script-src 'none';">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Deb Hansen | Theatre Arts Educator, Director & Yoga Instructor</title>
     <style>
         * {
@@ -29,6 +31,22 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+        }
+
+        /* Skip Navigation Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 2000;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         /* Navigation */
@@ -193,12 +211,6 @@
             margin-bottom: 0.3rem;
         }
 
-        .experience-item .dates {
-            color: var(--dark-green);
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
         /* Services Section */
         .services-grid {
             display: grid;
@@ -261,6 +273,54 @@
             border-radius: 5px;
             font-size: 0.95rem;
             color: var(--dark-green);
+        }
+
+        /* Service Images */
+        .service-image {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .service-image-directing {
+            aspect-ratio: 3/2;
+        }
+
+        .service-image-teaching {
+            aspect-ratio: 5/4;
+        }
+
+        .service-image-coaching {
+            aspect-ratio: 4/3;
+        }
+
+        .service-image-yoga {
+            aspect-ratio: 4/3;
+            object-position: center top;
+        }
+
+        /* Service Lists */
+        .service-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section Text Styles */
+        .contact-intro {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-location {
+            margin-top: 2rem;
+        }
+
+        /* Services Intro */
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
 
         /* Awards Section */
@@ -465,6 +525,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#home" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav>
         <ul>
@@ -484,7 +547,7 @@
             <div class="hero-text">
                 <h1>Deb Hansen</h1>
                 <p class="hero-subtitle">Performance Coach | Yoga Instructor | Director | Theatre Artist & Educator</p>
-                <p>With over 25 years of experience in theatre education and artistic direction, I am dedicated to nurturing collaboration, creativity, building confidence, and helping students and performers discover their authentic voice and how to honor their bodies on stage and in life.</p>
+                <p>With over 25 years of experience in theatre education and artistic direction, I am dedicated to nurturing creativity, building confidence, and helping students and performers discover their authentic voice on stage and in life.</p>
             </div>
         </div>
     </section>
@@ -496,7 +559,7 @@
             <p>I am a passionate theatre arts educator, director, and certified yoga instructor with a career spanning more than two decades. My journey in the performing arts has taken me from university stages to middle and high school classrooms, and into the vibrant Northern Virginia theatre community.</p>
             
             <div class="highlight-box">
-                <p>My mission is to create transformative experiences through the performing arts. Whether I'm directing a production, coaching an aspiring actor for college auditions, or leading a yoga class to help performers connect with their bodies, I believe in the power of authentic expression and collaborative creativity.</p>
+                <p>My mission is to create transformative experiences through the performing arts. Whether I'm directing a production, coaching an aspiring actor, a local actor who wants to make an impact, or leading a yoga class to help performers connect with their bodies, I believe in the power of authentic expression and collaborative creativity.</p>
             </div>
 
             <p>I hold a Master of Arts in English from Western Illinois University and a Bachelor of Arts in English from the University of Maryland. I trained at prestigious institutions including the Atlantic Acting School in NYC and as a Juilliard Directing Fellow in 2012, where I was one of only 15 secondary educators chosen nationwide.</p>
@@ -510,22 +573,22 @@
     <!-- Services Section -->
     <section id="services">
         <h2>Services</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">I offer personalized instruction and coaching across four key areas, each designed to help you grow as an artist and performer. My approach values collaboration above all else, creating a supportive environment where creativity can flourish.</p>
+        <p class="services-intro">I offer personalized instruction and coaching across four key areas, each designed to help you grow as an artist and performer. My approach values collaboration above all else, creating a supportive environment where creativity can flourish.</p>
         
         <div class="services-grid">
             <!-- Director Service -->
             <div class="service-card">
                 <h3>Director</h3>
-                <p class="service-description">My directing style values collaboration above all else. I believe in creating a safe, creative space where actors can take risks, explore characters deeply, and discover authentic moments. Whether working on classic texts or new devised work, I guide ensembles through a process that honors both the script and the unique gifts each performer brings to the production.</p>
+                <p class="service-description">I believe in creating a safe, creative space where actors can take risks, explore characters deeply, and discover new and genuine moments. Whether working on classic texts or new devised work, I guide ensembles through a process that honors both the script and the unique gifts each performer brings to the production.</p>
                 
-                <img src="directing.jpg" alt="Deb Hansen directing work" style="width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 8px; margin: 1rem 0;">
+                <img src="directing.jpg" alt="Deb Hansen directing work" class="service-image service-image-directing">
                 
                 <p><strong>Recent Directing Work:</strong></p>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <ul class="service-list">
                     <li>Miracle on 34th Street (2024)</li>
                     <li>Doubt: A Parable (2024)</li>
                     <li>Macbeth, Radium Girls, The Addams Family</li>
-                    <li>Student Playwriting Festivals (2010-2020)</li>
+                    <li>ARTfactory's 10x10 Playwriting Festival (2022-2024)</li>
                 </ul>
 
                 <div class="testimonial-box">
@@ -542,12 +605,12 @@
             <!-- Educator Service -->
             <div class="service-card">
                 <h3>Educator</h3>
-                <p class="service-description">With over 25 years of experience teaching theatre arts at middle school, high school, and adult education levels, I offer comprehensive instruction in all aspects of theatre. My teaching philosophy centers on creating an inviting, supportive classroom where students feel safe to take creative risks and discover their unique voice as artists.</p>
+                <p class="service-description">With over 25 years of experience teaching theatre arts at middle school, high school, and adult education levels, I offer comprehensive instruction in all aspects of theatre. My teaching philosophy centers on creating an inviting, supportive classroom where students feel safe to explore their own talents, connect collectively with any material, and challenged to succeed at things they thought impossible.</p>
                 
-                <img src="teaching.jpg" alt="Deb Hansen teaching theatre arts" style="width: 100%; aspect-ratio: 5/4; object-fit: cover; border-radius: 8px; margin: 1rem 0;">
+                <img src="teaching.jpg" alt="Deb Hansen teaching theatre arts" class="service-image service-image-teaching">
                 
                 <p><strong>Teaching Areas:</strong></p>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <ul class="service-list">
                     <li>Acting techniques and scene study</li>
                     <li>Improvisation and creative play</li>
                     <li>Playwriting workshops</li>
@@ -571,10 +634,10 @@
                 <h3>Performance Coaching</h3>
                 <p class="service-description">I specialize in one-on-one coaching for monologue performance and college audition preparation. My students have been accepted into the nation's top theatre programs including Carnegie Mellon, NYU Tisch, Juilliard, Columbia, and many more. Together, we'll work on finding material that showcases your unique strengths, developing authentic character choices, and building confidence for auditions.</p>
                 
-                <img src="coaching.jpg" alt="Deb Hansen performance coaching" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center center; border-radius: 8px; margin: 1rem 0;">
+                <img src="coaching.jpg" alt="Deb Hansen performance coaching" class="service-image service-image-coaching">
                 
                 <p><strong>Coaching Services Include:</strong></p>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <ul class="service-list">
                     <li>College audition preparation</li>
                     <li>Monologue selection and coaching</li>
                     <li>Scene study and character development</li>
@@ -583,25 +646,25 @@
                 </ul>
 
                 <div class="testimonial-box">
-                    "We wanted to support our daughter, Kartyr's love for theatre and Deb put us at ease right away. Thanks to her, our daughter auditioned successfully for several productions. She credits Ms. Hansen for her increased memory skills, confidence, and performance knowledge. She is part of our daughter's village."
+                    "We wanted to support our daughter Kartyr's love for theatre, and Deb put us at ease right away. Thanks to her, our daughter auditioned successfully for several productions. She credits Ms. Hansen for her increased memory skills, confidence, and performance knowledge. She is part of our daughter's village."
                     <br><br>
                     <strong>- Janeene, Kartyr's Mother</strong>
                 </div>
 
                 <div class="pricing-note">
-                    <strong>Pricing & Scheduling:</strong> Based on session length and frequency. Contact me for more information about private coaching packages.
+                    <strong>Pricing & Scheduling:</strong> Based on session length, frequency, and location. Virtual and Hybrid Coaching available. Contact me for more information about private coaching packages.
                 </div>
             </div>
 
             <!-- Yoga Service -->
             <div class="service-card">
                 <h3>Yoga for Performers</h3>
-                <p class="service-description">As a certified yoga instructor (RYT 200, CYT 200), I offer specialized yoga classes designed for performers and actors. Drawing from practices used in top conservatory programs, these sessions help develop body awareness, presence, breath control, and the physical flexibility essential for authentic performance. Yoga for performers strengthens the mind-body connection that allows actors to access deeper emotional truths.</p>
+                <p class="service-description">As a certified yoga instructor (RYT 200, CYT 200), I offer specialized yoga classes designed for performers and actors. Drawing from practices used in top conservatory programs, these sessions help develop body awareness, presence, breath control, and the physical flexibility essential for grounded stagecraft. Yoga for performers strengthens the mind-body connection that allows actors to access deeper emotional truths.</p>
                 
-                <img src="yoga.jpg" alt="Deb Hansen yoga instruction" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center top; border-radius: 8px; margin: 1rem 0;">
+                <img src="yoga.jpg" alt="Deb Hansen yoga instruction" class="service-image service-image-yoga">
                 
                 <p><strong>Yoga Offerings:</strong></p>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <ul class="service-list">
                     <li>Yoga for actors and performers</li>
                     <li>Breathwork and vocal warm-ups</li>
                     <li>Movement and body awareness</li>
@@ -669,12 +732,12 @@
         <div class="awards-grid">
             <div class="award-item">
                 <strong>Juilliard Directing Fellow (2012)</strong>
-                One of only 15 secondary educators chosen as Fellows nationwide for intensive training in script analysis, performance, directing, voice, improvisation, movement, and Meisner technique.
+                One of only 15 educators chosen as Fellows nationwide for intensive training in script analysis and directing classical texts.
             </div>
 
             <div class="award-item">
                 <strong>Teacher of the Year</strong>
-                Colonial Forge High School Teacher of the Year and Stafford County Teacher of the Year 2016 Finalist. Multiple nominations throughout career (2010, 2001, 2002, 2004, 2005).
+                Colonial Forge High School Teacher of the Year and Stafford County Teacher of the Year 2016 Finalist. Multiple nominations throughout career (2001, 2002, 2004, 2005, 2010).
             </div>
 
             <div class="award-item">
@@ -706,33 +769,31 @@
                 <strong>Stafford County Fine Arts Leadership Team</strong>
                 Served from 2010-2014, helping shape fine arts education in the district.
             </div>
-
-            <div class="award-item">
-                <strong>Academic Honors</strong>
-                Dean's List (1986-1988), Alpha Sigma Lambda Honor Society, Phi Kappa Phi Honor Society.
-            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Get In Touch</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem;">I'd love to hear from you! Whether you're interested in private coaching, directing collaboration, workshops, or yoga classes, please fill out the form below and I'll get back to you soon.</p>
+        <p class="contact-intro">I'd love to hear from you! Whether you're interested in private coaching, directing collaboration, workshops, or yoga classes, please fill out the form below and I'll get back to you soon.</p>
         
         <form action="https://formspree.io/f/xwprdbkv" method="POST" class="contact-form">
+            <!-- Honeypot field for spam protection -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            
             <div class="form-group">
                 <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required maxlength="100" pattern="[A-Za-z\s\-']+" title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)">
             </div>
             
             <div class="form-group">
                 <label for="email">Your Email *</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required maxlength="100">
             </div>
             
             <div class="form-group">
                 <label for="phone">Your Phone Number (Optional)</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" maxlength="20" pattern="[\d\s\-\(\)\+]+" title="Please enter a valid phone number">
             </div>
             
             <div class="form-group">
@@ -749,13 +810,13 @@
             
             <div class="form-group">
                 <label for="message">Your Message *</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required maxlength="1000"></textarea>
             </div>
             
             <button type="submit" class="submit-button">Send Message</button>
         </form>
 
-        <p style="margin-top: 2rem;">Located in Haymarket, Virginia, serving the Northern Virginia theatre community and beyond.</p>
+        <p class="contact-location">Located in Haymarket, Virginia, serving the Northern Virginia theatre community and beyond.</p>
     </section>
 
     <!-- Footer -->
