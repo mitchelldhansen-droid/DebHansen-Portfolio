@@ -344,6 +344,83 @@
             margin: 0 auto 2rem;
         }
 
+        /* Packages Section */
+        .packages-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .package-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--light-teal);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .package-card h4 {
+            color: var(--dark-green);
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .package-description {
+            color: var(--text-dark);
+            margin: 1rem 0;
+            line-height: 1.7;
+        }
+
+        .package-price {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-green);
+            text-align: center;
+        }
+
+        .package-availability {
+            color: var(--blue);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .package-discount {
+            color: var(--dark-green);
+            font-weight: 600;
+        }
+
+        .coaching-blurb {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0 2rem;
+            border-left: 4px solid var(--light-teal);
+        }
+
         /* Awards Section */
         .awards-grid {
             display: grid;
@@ -491,6 +568,30 @@
             transform: translateY(0);
         }
 
+        .contact-me-button {
+            display: inline-block;
+            background-color: var(--light-teal);
+            color: var(--dark-green);
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: 'Georgia', serif;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .contact-me-button:hover {
+            background-color: #6bc4b0;
+            transform: translateY(-2px);
+        }
+
+        .contact-me-button:active {
+            transform: translateY(0);
+        }
+
         /* Footer */
         footer {
             background-color: var(--text-dark);
@@ -542,6 +643,10 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -555,6 +660,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#packages">Packages</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#awards">Awards</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -583,7 +689,7 @@
                 <p>My mission is to create transformative experiences through the performing arts. Whether I'm directing a production, coaching an aspiring actor, a local actor who wants to make an impact, or leading a yoga class to help performers connect with their bodies, I believe in the power of authentic expression and collaborative creativity.</p>
             </div>
 
-            <p>I hold a Master of Arts in English from Western Illinois University, and a Bachelor of Arts in English from the University of Maryland, as well as my Virginia teaching certification for grades K-12. I trained at prestigious institutions including the Atlantic Acting School in NYC and as a Juilliard Directing Fellow in 2012, where I was one of only 15 secondary educators chosen nationwide.</p>
+            <p>I hold a Master of Arts in English from Western Illinois University, and a Bachelor of Arts in English from the University of Maryland, as well as my Virginia Teaching Certification for theatre, grades K-12. I trained at prestigious institutions including the Atlantic Acting School in NYC and as a Juilliard Directing Fellow in 2012, where I was one of only 15 secondary educators chosen nationwide.</p>
 
             <p>As a certified yoga instructor (RYT 200, CYT 200), I integrate mindfulness and body awareness into my teaching practice, helping actors develop the physical presence and emotional depth that conservatory programs cultivate.</p>
 
@@ -705,6 +811,143 @@
                     <strong>Pricing & Scheduling:</strong> Based on class format (private or group), duration, and location. Contact me for more information about yoga sessions.
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <h2>Service Packages</h2>
+        <p class="packages-intro">These packages are mutable and simply a starting place to best suggest how we use our time. Use the contact sheet at the bottom of the page to book or if you have any questions or financial concerns. Some commitments may be required for children under the age of 16.</p>
+        <p class="packages-intro">Sessions are payable to Deb Hansen via cash, check, Venmo, Paypal, Zelle, or Ca$hApp. I currently do not accept credit cards. Thank you for your understanding!</p>
+
+        <h3>Coaching</h3>
+        <div class="coaching-blurb">
+            <p>My coaching services offer expert quality guidance, available both live and virtually. This is your time to leverage my experience to maximize your potential as a performer.</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Tune Ups -->
+            <a href="#contact" class="package-card">
+                <h4>Tune Ups</h4>
+                <p class="package-description">Need a session or two or can't commit to a full package? My Tune Ups are just what you're looking for. 30-60 mins to work on whatever you want most. From material selection, to performance feedback, or scene work— anything goes!</p>
+                <div class="package-price">
+                    $55 / half hour<br>
+                    $100 / one hour
+                </div>
+                <p class="package-availability">Spots available now!</p>
+            </a>
+
+            <!-- Audition Prep -->
+            <a href="#contact" class="package-card">
+                <h4>Audition Prep</h4>
+                <p class="package-description">Over two one hour sessions we will work to find the best material suited for your audition, coach you to slate personably and professionally, stay coachable and commit to strong choices.</p>
+                <div class="package-price">
+                    2 one hour sessions - $190<br>
+                    <span class="package-discount">(5% discount!)</span>
+                </div>
+                <p class="package-availability">Spots still available!</p>
+            </a>
+
+            <!-- Monologue Duo -->
+            <a href="#contact" class="package-card">
+                <h4>Monologue Duo</h4>
+                <p class="package-description">This package is for those who want to find new material, or make new connections to a pair of monologues they can use no matter what life throws at them. We'll work together to find and polish one comedic and one dramatic monologue that you can feel confident in.</p>
+                <div class="package-price">
+                    4 one hour sessions - $370<br>
+                    <span class="package-discount">(7.5% discount!)</span>
+                </div>
+                <p class="package-availability">Most common package!</p>
+            </a>
+
+            <!-- Higher Learning Prep -->
+            <a href="#contact" class="package-card">
+                <h4>Higher Learning Prep</h4>
+                <p class="package-description">In depth preparation for those looking to find the best materials to work with for undergrad, graduate, or conservatory auditions. This package provides focused, strategic preparation specifically tailored to help you make your best impression.</p>
+                <div class="package-price">
+                    6-8 one hour sessions - $555-$740<br>
+                    <span class="package-discount">(7.5% discount!)</span>
+                </div>
+                <p class="package-availability">Spots fill up fast!</p>
+            </a>
+
+            <!-- Portfolio Bundle -->
+            <a href="#contact" class="package-card">
+                <h4>Portfolio Bundle</h4>
+                <p class="package-description">This is for a child or adult looking to bring a range of work to every audition or interview, to study the plays they're going to be performing works from and to build a portfolio for comedic, dramatic, and classical works. You will have one comedic, one dramatic, one classical, and 2 songs (should you wish) by the end of our coaching.</p>
+                <div class="package-price">
+                    10 one hour sessions - $920<br>
+                    <span class="package-discount">(8% off! + one FREE 30 min consultation)</span>
+                </div>
+                <p class="package-availability">Several slots still available!</p>
+            </a>
+
+            <!-- Character Exploration -->
+            <a href="#contact" class="package-card">
+                <h4>Character Exploration</h4>
+                <p class="package-description">An opportunity for an actor of any age to use monologues, soliloquy's, scenes (and if desired, music) to explore character's of their age in their body and mind. Working with me directly as a scene coach and partner to guide them towards a deeper understanding of source material, themselves, and how they relate to other actors around them.</p>
+                <div class="package-price">
+                    10-12 one hour sessions - $920-$1,100<br>
+                    <span class="package-discount">(8.5% off! + one FREE 30 min consultation)</span>
+                </div>
+                <p class="package-availability">Spots available to all ages!</p>
+            </a>
+
+            <!-- Scene Study -->
+            <a href="#contact" class="package-card">
+                <h4>Scene Study</h4>
+                <p class="package-description">Limited run only available to multiple persons, a true conservatory style scene study where multiple actors will study multiple scenes and come to a deeper understanding of how they relate to themselves and others in a scene.</p>
+                <div class="package-price">
+                    12+ one hour sessions - starting at $1,050 / person<br>
+                    <span class="package-discount">(12% off! + one FREE 30 min consult)</span>
+                </div>
+                <p class="package-availability">Contact me now to reserve your spot!</p>
+            </a>
+        </div>
+
+        <h3>Yoga</h3>
+        <div class="coaching-blurb">
+            <p>Yoga is for anyone looking to include more mindful movement to their lives, or, be more mindful about how they move throughout their life. Use the contact sheet at the bottom of the page to book or if you have any questions about what I offer.</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- 1-on-1 Class -->
+            <a href="#contact" class="package-card">
+                <h4>1-on-1 Class</h4>
+                <p class="package-description">Personalized yoga instruction tailored to your individual needs, goals, and experience level. Work one-on-one with me to develop your practice in a supportive, focused environment.</p>
+                <div class="package-price">
+                    $80 / single class<br>
+                    $70 / subscription
+                </div>
+                <p class="package-availability">Contact me today!</p>
+            </a>
+
+            <!-- Group Class -->
+            <a href="#contact" class="package-card">
+                <h4>Group Class</h4>
+                <p class="package-description">Join a small group for collaborative yoga practice. Build community while developing your mindfulness and movement skills alongside others in an intimate, supportive setting. 6-12 sessions over 6 weeks.</p>
+                <div class="package-price">
+                    Subscription Only Service<br>
+                    $20 / Class $120-$240 depending on frequency
+                </div>
+                <p class="package-availability">Registration now open!</p>
+            </a>
+
+            <!-- Large Class -->
+            <a href="#contact" class="package-card">
+                <h4>Large Class (7+ people)</h4>
+                <p class="package-description">Experience the energy of practicing with a larger community. Perfect for groups, organizations, or those who thrive in a dynamic, collective atmosphere. You provide the space, I'll provide the instruction!</p>
+                <div class="package-price">
+                    Subscription Only Service<br>
+                    rates may vary
+                </div>
+                <p class="package-availability">Get in touch!</p>
+            </a>
+        </div>
+
+        <h3>Directing & Educating</h3>
+        <div class="coaching-blurb">
+            <p>Please reach out directly to me using the contact form below if you want to discuss a directing project or educational opportunity with me. I look forward to hearing from you.</p>
+            <a href="#contact" class="contact-me-button">Contact Me</a>
         </div>
     </section>
 
