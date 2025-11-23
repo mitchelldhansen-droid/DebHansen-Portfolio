@@ -421,6 +421,54 @@
             border-left: 4px solid var(--light-teal);
         }
 
+        /* Holiday Sale Ribbon Banner */
+        .holiday-sale-banner {
+            background: linear-gradient(135deg, var(--dark-green) 0%, #2d5f3f 100%);
+            color: var(--white);
+            padding: 2rem 2.5rem;
+            margin: 2.5rem -2rem;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .holiday-sale-banner h3 {
+            color: var(--light-teal);
+            font-size: 1.8rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .holiday-sale-banner p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .holiday-sale-banner strong {
+            color: var(--light-teal);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .holiday-sale-cta {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        /* Ribbon accent lines */
+        .ribbon-accent {
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--light-teal);
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
         /* Awards Section */
         .awards-grid {
             display: grid;
@@ -819,6 +867,13 @@
         <h2>Service Packages</h2>
         <p class="packages-intro">These packages are mutable and simply a starting place to best suggest how we use our time. Use the contact sheet at the bottom of the page to book or if you have any questions or financial concerns. Some commitments may be required for children under the age of 16.</p>
         <p class="packages-intro">Sessions are payable to Deb Hansen via cash, check, Venmo, Paypal, Zelle, or Ca$hApp. I currently do not accept credit cards. Thank you for your understanding!</p>
+
+        <!-- Holiday Sale Ribbon Banner -->
+        <div class="holiday-sale-banner">
+            <h3><span class="ribbon-accent"></span> Holiday Sale <span class="ribbon-accent"></span></h3>
+            <p>Get an additional <strong>5% off</strong> any purchased package when you buy now through January 1st.</p>
+            <p class="holiday-sale-cta">Use the contact form at the bottom of this site for questions or to book now!</p>
+        </div>
 
         <h3>Coaching</h3>
         <div class="coaching-blurb">
