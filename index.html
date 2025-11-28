@@ -147,6 +147,42 @@
             line-height: 1.8;
         }
 
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--light-teal);
+            color: var(--dark-green);
+            padding: 1rem 2.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(125, 211, 192, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #6bc4b0;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(125, 211, 192, 0.5);
+        }
+
+        .hero-secondary {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-secondary a {
+            color: var(--light-teal);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .hero-secondary a:hover {
+            color: var(--white);
+        }
+
         /* Sections */
         section {
             padding: 4rem 2rem;
@@ -658,6 +694,11 @@
 
             .hero-text {
                 flex: 1;
+                text-align: left;
+            }
+
+            .hero-text p {
+                margin: 1rem 0;
             }
 
             .hero h1 {
@@ -695,6 +736,11 @@
             .packages-grid {
                 grid-template-columns: 1fr;
             }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1.05rem;
+            }
         }
     </style>
 </head>
@@ -721,8 +767,12 @@
             <img src="headshot.jpg" alt="Deb Hansen" class="hero-image">
             <div class="hero-text">
                 <h1>Deb Hansen</h1>
-                <p class="hero-subtitle">Performance Coach | Yoga Instructor | Director | Theatre Artist & Educator</p>
+                <p class="hero-subtitle">Performance Coach | Yoga Instructor | Director | Theatre Educator</p>
                 <p>With over 25 years of experience in theatre education and artistic direction, I am dedicated to nurturing creativity, building confidence, and helping students and performers discover their authentic voice on stage and in life.</p>
+                <a href="#contact" class="cta-button">Book a Session</a>
+                <p class="hero-secondary">
+                    <a href="#services">Learn more about what I offer →</a>
+                </p>
             </div>
         </div>
     </section>
