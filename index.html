@@ -102,9 +102,53 @@
             color: var(--light-teal);
         }
 
+        /* Fixed Holiday Banner (below nav) */
+        .holiday-banner-fixed {
+            position: fixed;
+            top: 54px; /* Height of nav bar */
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--dark-green) 0%, #2d5f3f 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 0.6rem 1rem;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .holiday-banner-fixed p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .holiday-banner-fixed strong {
+            color: var(--light-teal);
+        }
+
+        .holiday-banner-fixed a {
+            color: var(--light-teal);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .holiday-banner-fixed a:hover {
+            color: var(--white);
+        }
+
+        .banner-accent-fixed {
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: var(--light-teal);
+            margin: 0 10px;
+            vertical-align: middle;
+            opacity: 0.7;
+        }
+
         /* Hero Section */
         .hero {
-            margin-top: 60px;
+            margin-top: 100px; /* Adjusted for nav + fixed banner */
             background: linear-gradient(135deg, var(--blue) 0%, var(--dark-green) 100%);
             color: var(--white);
             padding: 4rem 2rem;
@@ -717,6 +761,24 @@
                 font-size: 0.9rem;
             }
 
+            .holiday-banner-fixed {
+                top: 48px; /* Slightly smaller nav on mobile */
+                padding: 0.5rem 0.75rem;
+            }
+
+            .holiday-banner-fixed p {
+                font-size: 0.85rem;
+            }
+
+            .banner-accent-fixed {
+                width: 15px;
+                margin: 0 5px;
+            }
+
+            .hero {
+                margin-top: 90px; /* Adjusted for mobile nav + banner */
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
@@ -760,6 +822,16 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Fixed Holiday Banner (below nav) -->
+    <div class="holiday-banner-fixed">
+        <p>
+            <span class="banner-accent-fixed"></span>
+            <strong>Holiday Sale!</strong> Get an additional 5% off any package through January 1st. 
+            <a href="#contact">Book now →</a>
+            <span class="banner-accent-fixed"></span>
+        </p>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
