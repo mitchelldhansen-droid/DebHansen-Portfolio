@@ -105,7 +105,7 @@
         /* Fixed Holiday Banner (below nav) */
         .holiday-banner-fixed {
             position: fixed;
-            top: 54px; /* Height of nav bar */
+            top: 52px; /* Flush with nav bottom */
             left: 0;
             width: 100%;
             background: linear-gradient(135deg, var(--dark-green) 0%, #2d5f3f 100%);
@@ -234,8 +234,27 @@
             margin: 0 auto;
         }
 
-        section:nth-child(even) {
+        /* Section backgrounds set explicitly for reliability */
+        #about {
+            background-color: var(--white);
+        }
+
+        #services {
             background-color: var(--light-bg);
+            max-width: none;
+        }
+
+        #packages {
+            background-color: var(--white);
+        }
+
+        #experience {
+            background-color: var(--light-bg);
+            max-width: none;
+        }
+
+        #awards {
+            background-color: var(--white);
         }
 
         h2 {
@@ -762,7 +781,7 @@
             }
 
             .holiday-banner-fixed {
-                top: 48px; /* Slightly smaller nav on mobile */
+                top: 95px; /* Slight overlap to eliminate gap */
                 padding: 0.5rem 0.75rem;
             }
 
@@ -776,7 +795,7 @@
             }
 
             .hero {
-                margin-top: 90px; /* Adjusted for mobile nav + banner */
+                margin-top: 145px; /* Adjusted for taller mobile nav + banner */
             }
 
             .hero h1 {
