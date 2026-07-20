@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'none'; frame-ancestors 'none'; base-uri 'self';"
+        />
+        <meta name="robots" content="noindex" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+        <title>Thank You | Embodied Actors Studio</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --light-teal: #7dd3c0;
+                --dark-green: #1a4d2e;
+                --cream: #fdfcfa;
+                --text-muted: #5a6c7d;
+            }
+
+            body {
+                font-family: "Montserrat", -apple-system, sans-serif;
+                background-color: var(--cream);
+                color: var(--text-muted);
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 2rem;
+                line-height: 1.75;
+            }
+
+            .thanks-card {
+                max-width: 560px;
+            }
+
+            .thanks-brand {
+                font-size: 0.75rem;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin-bottom: 1.5rem;
+            }
+
+            h1 {
+                font-family: "Cormorant Garamond", Georgia, serif;
+                font-size: 3rem;
+                font-weight: 500;
+                color: var(--dark-green);
+                margin-bottom: 1.25rem;
+                line-height: 1.15;
+            }
+
+            p {
+                margin-bottom: 2.5rem;
+            }
+
+            .btn-home {
+                display: inline-block;
+                padding: 1.1rem 2.5rem;
+                background-color: var(--light-teal);
+                color: var(--dark-green);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn-home:hover {
+                background-color: #6bc4b0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="thanks-card">
+            <div class="thanks-brand">Embodied Actors Studio</div>
+            <h1>Thank You!</h1>
+            <p>
+                Your message is on its way. I read every note personally and
+                will get back to you within a day or two. In the meantime, feel
+                free to keep exploring the studio.
+            </p>
+            <a href="index.html" class="btn-home">Back to the Studio</a>
+        </div>
+    </body>
+</html>

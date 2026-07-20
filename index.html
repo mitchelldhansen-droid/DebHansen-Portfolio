@@ -13,7 +13,7 @@
         <!-- SEO Meta Tags -->
         <meta
             name="description"
-            content="Deb Hansen - Theatre Arts Educator, Director, Performance Coach, and Yoga Instructor with 25+ years of experience. Helping actors develop authentic performance through coaching, directing, and mindful movement."
+            content="Deb Hansen - Theatre Arts Educator, Director, Performance Coach, and Yoga Instructor with 30+ years of experience. Helping actors develop authentic performance through coaching, directing, and mindful movement."
         />
         <meta
             name="keywords"
@@ -25,11 +25,11 @@
         <!-- Open Graph Meta Tags for Social Media -->
         <meta
             property="og:title"
-            content="Deb Hansen | Theatre Arts Educator, Director & Yoga Instructor"
+            content="Embodied Actors Studio | Deb Hansen - Theatre Arts Educator, Director & Yoga Instructor"
         />
         <meta
             property="og:description"
-            content="With over 25 years of experience in theatre education and artistic direction, I help students and performers discover their authentic voice on stage and in life."
+            content="With over 30 years of experience in theatre education and artistic direction, I help students and performers discover their authentic voice on stage and in life."
         />
         <meta
             property="og:image"
@@ -43,11 +43,11 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta
             name="twitter:title"
-            content="Deb Hansen | Theatre Arts Educator, Director & Yoga Instructor"
+            content="Embodied Actors Studio | Deb Hansen - Theatre Arts Educator, Director & Yoga Instructor"
         />
         <meta
             name="twitter:description"
-            content="With over 25 years of experience in theatre education and artistic direction, I help students and performers discover their authentic voice on stage and in life."
+            content="With over 30 years of experience in theatre education and artistic direction, I help students and performers discover their authentic voice on stage and in life."
         />
         <meta
             name="twitter:image"
@@ -64,8 +64,43 @@
 
         <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
         <title>
-            Deb Hansen | Theatre Arts Educator, Director & Yoga Instructor
+            Embodied Actors Studio | Deb Hansen - Theatre Arts Educator,
+            Director & Yoga Instructor
         </title>
+
+        <!-- Structured Data for Search Engines -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": "https://embodiedactorsstudio.com/#studio",
+                "name": "Embodied Actors Studio",
+                "description": "Theatre arts education, directing, performance coaching, and yoga for performers with 30+ years of experience. College audition preparation, monologue coaching, and mindful movement in Northern Virginia.",
+                "url": "https://embodiedactorsstudio.com",
+                "image": "https://embodiedactorsstudio.com/headshot.jpg",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Deb Hansen",
+                    "jobTitle": "Theatre Arts Educator, Director, Performance Coach & Yoga Instructor"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Haymarket",
+                    "addressRegion": "VA",
+                    "addressCountry": "US"
+                },
+                "areaServed": "Northern Virginia",
+                "priceRange": "$55-$1,100",
+                "knowsAbout": [
+                    "College audition preparation",
+                    "Monologue coaching",
+                    "Acting technique",
+                    "Theatre directing",
+                    "Playwriting",
+                    "Yoga for performers"
+                ]
+            }
+        </script>
         <style>
             * {
                 margin: 0;
@@ -875,6 +910,24 @@
                 font-style: italic;
             }
 
+            .package-cta {
+                display: block;
+                width: fit-content;
+                margin: 1.5rem auto 0;
+                padding: 0.8rem 2rem;
+                background-color: var(--light-teal);
+                color: var(--dark-green);
+                font-weight: 600;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: background-color 0.3s ease;
+            }
+
+            .package-card:hover .package-cta {
+                background-color: #6bc4b0;
+            }
+
             /* Experience Section */
             .experience-layout {
                 display: grid;
@@ -1144,9 +1197,49 @@
                 background-color: #1a3a28;
                 color: rgba(255, 255, 255, 0.6);
                 text-align: center;
-                padding: 2.5rem;
+                padding: 3.5rem 2.5rem 2.5rem;
                 font-size: 0.85rem;
                 letter-spacing: 0.5px;
+            }
+
+            .footer-brand {
+                display: inline-block;
+                font-family: "Cormorant Garamond", Georgia, serif;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: var(--white);
+                text-decoration: none;
+                letter-spacing: 1px;
+                margin-bottom: 1.25rem;
+            }
+
+            .footer-nav {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem 2rem;
+                margin-bottom: 1.25rem;
+                padding: 0;
+            }
+
+            .footer-nav a {
+                color: rgba(255, 255, 255, 0.75);
+                text-decoration: none;
+                font-size: 0.75rem;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+            }
+
+            .footer-nav a:hover {
+                color: var(--light-teal);
+            }
+
+            .footer-location {
+                margin-bottom: 1.25rem;
+                color: rgba(255, 255, 255, 0.6);
             }
 
             /* Contact Button in Coaching Blurb */
@@ -1237,8 +1330,8 @@
                 }
             }
 
-            @media (max-width: 768px) {
-                /* Mobile Menu */
+            /* Hamburger menu kicks in before the brand + 7 links collide */
+            @media (max-width: 1150px) {
                 .menu-icon {
                     display: flex;
                 }
@@ -1280,7 +1373,9 @@
                 nav ul a::after {
                     display: none;
                 }
+            }
 
+            @media (max-width: 768px) {
                 .hero {
                     margin-top: 75px;
                 }
@@ -1382,7 +1477,13 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-image-side">
-                <img src="headshot.jpg" alt="Deb Hansen" class="hero-image" />
+                <img
+                    src="headshot.jpg"
+                    alt="Deb Hansen"
+                    class="hero-image"
+                    width="800"
+                    height="754"
+                />
                 <div class="hero-image-overlay"></div>
             </div>
             <div class="hero-content-side">
@@ -1395,7 +1496,7 @@
                     Performance Coach | Yoga Instructor | Director | Educator
                 </p>
                 <p>
-                    With over 25 years of experience in theatre education and
+                    With over 30 years of experience in theatre education and
                     artistic direction, I am dedicated to nurturing creativity,
                     building confidence, and helping students and performers
                     discover their authentic voice on stage and in life.
@@ -1427,7 +1528,7 @@
                         <p>
                             I am a passionate theatre arts educator, director,
                             and certified yoga instructor with a career spanning
-                            more than two decades. My journey in the performing
+                            more than three decades. My journey in the performing
                             arts has taken me from university stages to middle
                             and high school classrooms, and into the vibrant
                             Northern Virginia theatre community.
@@ -1448,7 +1549,7 @@
 
                         <div class="about-credentials">
                             <div class="credential-item">
-                                <div class="credential-number">25+</div>
+                                <div class="credential-number">30+</div>
                                 <div class="credential-label">
                                     Years Experience
                                 </div>
@@ -1467,8 +1568,11 @@
                         <div class="about-image-frame"></div>
                         <img
                             src="logo-banner.jpg"
-                            alt="The Embodied Actor's Studio"
+                            alt="Embodied Actors Studio"
                             class="about-image about-logo"
+                            width="1424"
+                            height="752"
+                            loading="lazy"
                         />
                     </div>
                 </div>
@@ -1500,6 +1604,9 @@
                                 src="directing.jpg"
                                 alt="Deb Hansen directing work"
                                 class="service-image service-image-directing"
+                                width="1200"
+                                height="800"
+                                loading="lazy"
                             />
                         </div>
                         <div class="service-content">
@@ -1530,8 +1637,9 @@
                                 I'll jump at any chance to work with her again."
                                 <br /><br />
                                 <strong
-                                    >- Carolyn, Sister Aloysius ARTfactory,
-                                    WATCH Nominee</strong
+                                    >- Carolyn, Sister Aloysius, ARTfactory —
+                                    Washington Area Theatre Community Honors
+                                    (WATCH) Nominee</strong
                                 >
                             </div>
 
@@ -1550,12 +1658,15 @@
                                 src="teaching.jpg"
                                 alt="Deb Hansen teaching theatre arts"
                                 class="service-image service-image-teaching"
+                                width="1200"
+                                height="960"
+                                loading="lazy"
                             />
                         </div>
                         <div class="service-content">
                             <h3>Educator</h3>
                             <p class="service-description">
-                                With over 25 years teaching theatre arts, I
+                                With over 30 years teaching theatre arts, I
                                 offer comprehensive instruction in all aspects
                                 of theatre in a supportive environment.
                             </p>
@@ -1574,7 +1685,10 @@
                                 feel like we were working together. She always
                                 made sure that my vision was clear and precise."
                                 <br /><br />
-                                <strong>- Kennedy, Drama 3 Student CFHS</strong>
+                                <strong
+                                    >- Kennedy, Drama 3 Student, Colonial Forge
+                                    High School</strong
+                                >
                             </div>
 
                             <div class="pricing-note">
@@ -1591,6 +1705,9 @@
                                 src="coaching.jpg"
                                 alt="Deb Hansen performance coaching"
                                 class="service-image service-image-coaching"
+                                width="1024"
+                                height="768"
+                                loading="lazy"
                             />
                         </div>
                         <div class="service-content">
@@ -1635,6 +1752,9 @@
                                 src="yoga.jpg"
                                 alt="Deb Hansen yoga instruction"
                                 class="service-image service-image-yoga"
+                                width="1198"
+                                height="899"
+                                loading="lazy"
                             />
                         </div>
                         <div class="service-content">
@@ -1661,7 +1781,10 @@
                                 ahead. I would recommend her to anyone seeking
                                 mindful preparation and ease."
                                 <br /><br />
-                                <strong>- Scott, Arthur Kipps PWLT</strong>
+                                <strong
+                                    >- Scott, Arthur Kipps, Prince William
+                                    Little Theatre</strong
+                                >
                             </div>
 
                             <div class="pricing-note">
@@ -1692,7 +1815,8 @@
 
                 <p class="packages-intro">
                     Sessions are payable via cash, check, Venmo, PayPal, Zelle,
-                    or CashApp. I currently do not accept credit cards.
+                    or CashApp. Credit and debit cards are accepted through
+                    PayPal.
                 </p>
 
                 <div class="packages-category">
@@ -1720,6 +1844,7 @@
                             <p class="package-availability">
                                 Spots available now
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1736,8 +1861,9 @@
                                 >
                             </div>
                             <p class="package-availability">
-                                Spots still available
+                                Book ahead of audition season
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1755,6 +1881,7 @@
                             <p class="package-availability">
                                 Most common package
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1771,8 +1898,9 @@
                                 >
                             </div>
                             <p class="package-availability">
-                                Spots fill up fast
+                                Fall college audition slots fill quickly
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1790,6 +1918,7 @@
                             <p class="package-availability">
                                 Several slots available
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1800,7 +1929,7 @@
                                 and partner.
                             </p>
                             <div class="package-price">
-                                10-12 sessions - $920-$1,100
+                                10-12 one hour sessions - $915-$1,098
                                 <span class="package-discount"
                                     >8.5% off + FREE consultation</span
                                 >
@@ -1808,6 +1937,7 @@
                             <p class="package-availability">
                                 Available to all ages
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1817,7 +1947,7 @@
                                 multiple actors to develop deeper understanding.
                             </p>
                             <div class="package-price">
-                                12+ sessions - starting at $1,050/person
+                                12+ sessions - starting at $1,056/person
                                 <span class="package-discount"
                                     >12% off + FREE consultation</span
                                 >
@@ -1825,6 +1955,7 @@
                             <p class="package-availability">
                                 Contact to reserve
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
                     </div>
                 </div>
@@ -1850,6 +1981,7 @@
                                 $80 / single class | $70 / subscription
                             </div>
                             <p class="package-availability">Contact me today</p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1859,11 +1991,12 @@
                                 practice. 6-12 sessions over 6 weeks.
                             </p>
                             <div class="package-price">
-                                $20/class | $120-$240 subscription
+                                $20/class | $110-$230 subscription
                             </div>
                             <p class="package-availability">
                                 Registration now open
                             </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
 
                         <a href="#contact" class="package-card">
@@ -1875,7 +2008,10 @@
                             <div class="package-price">
                                 Subscription Only - rates vary
                             </div>
-                            <p class="package-availability">Get in touch</p>
+                            <p class="package-availability">
+                                Perfect for casts and organizations
+                            </p>
+                            <span class="package-cta">Get in Touch</span>
                         </a>
                     </div>
                 </div>
@@ -1949,9 +2085,10 @@
                                 Acting School
                             </h4>
                             <p>
-                                2011 and 2012. One of only 15 educators selected
-                                nationwide for this prestigious fellowship
-                                program.
+                                One of only 15 educators selected nationwide for
+                                Juilliard's prestigious fellowship program in
+                                2012. Selected by audition for the Atlantic
+                                Acting School intensive in 2014.
                             </p>
                         </div>
 
@@ -1973,7 +2110,8 @@
                             </h4>
                             <p>
                                 Directed 8-10 productions yearly from 2001-2007.
-                                Gold Trophy wins at VTA competitions 2004-2006.
+                                Gold Trophy wins at Virginia Theatre Association
+                                competitions 2004-2007.
                             </p>
                         </div>
 
@@ -1996,7 +2134,7 @@
                         Recent credits include directing
                         <em>Miracle on 34th Street</em> and
                         <em>Doubt: A Parable</em> for Rooftop Productions.
-                        Currently preparing to direct <em>Chapter 2</em> at
+                        Currently preparing to direct <em>Chapter Two</em> at
                         Prince William Little Theatre in March '27.
                     </p>
                 </div>
@@ -2064,7 +2202,7 @@
                         <div class="award-icon">
                             <div class="award-icon-inner"></div>
                         </div>
-                        <strong>VTA Success</strong>
+                        <strong>Virginia Theatre Association</strong>
                         <p>
                             Champion Director/Advisor (2009), Gold Level Trophy
                             Winner (2004-2007).
@@ -2105,7 +2243,7 @@
                         <div class="award-icon">
                             <div class="award-icon-inner"></div>
                         </div>
-                        <strong>PWLT Volunteer</strong>
+                        <strong>Prince William Little Theatre</strong>
                         <p>
                             Prince William Little Theatre Volunteer of the
                             Month, October 2025.
@@ -2167,6 +2305,11 @@
                             tabindex="-1"
                             autocomplete="off"
                         />
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://embodiedactorsstudio.com/thanks.html"
+                        />
 
                         <div class="form-group">
                             <label for="name">Your Name *</label>
@@ -2176,8 +2319,6 @@
                                 name="name"
                                 required
                                 maxlength="100"
-                                pattern="[A-Za-z\s\-']+"
-                                title="Please enter a valid name"
                             />
                         </div>
 
@@ -2245,7 +2386,19 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2025 Deb Hansen. All rights reserved.</p>
+            <a href="#home" class="footer-brand">Embodied Actors Studio</a>
+            <ul class="footer-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p class="footer-location">
+                Haymarket, Virginia &mdash; Serving Northern Virginia & Beyond
+            </p>
+            <p>&copy; 2026 Embodied Actors Studio. All rights reserved.</p>
         </footer>
     </body>
 </html>
