@@ -581,6 +581,7 @@
                 position: relative;
                 z-index: 1;
                 width: 100%;
+                height: auto; /* keep width/height attrs as layout hints only */
                 aspect-ratio: 4/5;
                 object-fit: cover;
                 object-position: center top;
@@ -676,6 +677,7 @@
 
             .service-image {
                 width: 100%;
+                height: auto; /* keep width/height attrs as layout hints only */
                 object-fit: cover;
                 transition: transform 0.6s ease;
             }
