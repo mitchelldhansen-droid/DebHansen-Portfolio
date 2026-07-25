@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; form-action 'self' https://formspree.io; script-src 'none'; frame-ancestors 'none'; base-uri 'self';"
+            content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; form-action 'self' https://formspree.io; frame-src https://calendly.com; script-src 'none'; frame-ancestors 'none'; base-uri 'self';"
         />
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -251,8 +251,34 @@
             }
 
             /* Hero Section */
-            .hero {
+            /* Golden Ticket Promo Banner */
+            .promo-banner {
                 margin-top: 85px;
+                background: linear-gradient(
+                    90deg,
+                    var(--gold-accent) 0%,
+                    #dbbf7e 50%,
+                    var(--gold-accent) 100%
+                );
+                color: var(--dark-green);
+                text-align: center;
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+            }
+
+            .promo-banner strong {
+                font-weight: 700;
+            }
+
+            .promo-banner a {
+                color: var(--dark-green);
+                font-weight: 600;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            .hero {
                 min-height: calc(100vh - 85px);
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -1087,26 +1113,31 @@
                 pointer-events: none;
             }
 
+            .contact-header {
+                text-align: center;
+                max-width: 700px;
+                margin: 0 auto 4rem;
+            }
+
+            .contact-header h2 {
+                color: var(--white);
+            }
+
+            .contact-header p {
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 2.5rem;
+            }
+
+            .contact-header-details {
+                display: flex;
+                justify-content: center;
+                gap: 4rem;
+            }
+
             .contact-layout {
                 display: grid;
-                grid-template-columns: 1fr 1.2fr;
-                gap: 5rem;
-                align-items: start;
-            }
-
-            .contact-info h2 {
-                color: var(--white);
-                text-align: left;
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-info p {
-                color: rgba(255, 255, 255, 0.8);
-                margin-bottom: 2rem;
-            }
-
-            .contact-detail {
-                margin-bottom: 1.5rem;
+                grid-template-columns: 1fr auto 1fr;
+                gap: 2.5rem;
             }
 
             .contact-detail-label {
@@ -1192,6 +1223,51 @@
             .btn-submit:hover {
                 background-color: #6bc4b0;
                 transform: translateY(-2px);
+            }
+
+            /* Calendly Booking Card + OR Divider */
+            .calendly-card {
+                background-color: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .calendly-label {
+                font-size: 0.75rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--light-teal);
+                margin-bottom: 1.25rem;
+            }
+
+            .calendly-frame {
+                display: block;
+                width: 100%;
+                height: 700px;
+                border: 0;
+            }
+
+            .contact-divider {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-self: stretch;
+                gap: 1.25rem;
+                color: var(--light-teal);
+                font-size: 0.85rem;
+                font-weight: 600;
+                letter-spacing: 3px;
+            }
+
+            .contact-divider::before,
+            .contact-divider::after {
+                content: "";
+                flex: 1;
+                width: 1px;
+                background-color: rgba(255, 255, 255, 0.2);
             }
 
             /* Footer */
@@ -1324,7 +1400,23 @@
 
                 .contact-layout {
                     grid-template-columns: 1fr;
-                    gap: 3rem;
+                    gap: 2.5rem;
+                }
+
+                .contact-header-details {
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+
+                .contact-divider {
+                    flex-direction: row;
+                    align-self: auto;
+                }
+
+                .contact-divider::before,
+                .contact-divider::after {
+                    width: auto;
+                    height: 1px;
                 }
 
                 .awards-grid {
@@ -1378,7 +1470,7 @@
             }
 
             @media (max-width: 768px) {
-                .hero {
+                .promo-banner {
                     margin-top: 75px;
                 }
 
@@ -1475,6 +1567,13 @@
                 </ul>
             </div>
         </nav>
+
+        <!-- Golden Ticket Banner -->
+        <div class="promo-banner">
+            <strong>Are you a Golden Ticket winner?</strong> Scroll down or
+            hit Contact above to
+            <a href="#contact">book your consultation for FREE today</a>
+        </div>
 
         <!-- Hero Section -->
         <section id="home" class="hero">
@@ -2258,29 +2357,27 @@
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="section-inner">
-                <div class="contact-layout">
-                    <div class="contact-info">
-                        <div
-                            class="section-eyebrow"
-                            style="justify-content: flex-start"
+                <div class="contact-header">
+                    <div class="section-eyebrow">
+                        <span
+                            class="eyebrow-line"
+                            style="background-color: var(--light-teal)"
+                        ></span>
+                        <span
+                            class="eyebrow-text"
+                            style="color: var(--light-teal)"
+                            >Get Started</span
                         >
-                            <span
-                                class="eyebrow-line"
-                                style="background-color: var(--light-teal)"
-                            ></span>
-                            <span
-                                class="eyebrow-text"
-                                style="color: var(--light-teal)"
-                                >Get Started</span
-                            >
-                        </div>
-                        <h2>Get In Touch</h2>
-                        <p>
-                            Whether you're interested in private coaching,
-                            directing collaboration, workshops, or yoga classes,
-                            I'd love to hear from you.
-                        </p>
+                    </div>
+                    <h2>Get In Touch</h2>
+                    <p>
+                        Whether you're interested in private coaching,
+                        directing collaboration, workshops, or yoga classes,
+                        I'd love to hear from you. In person preferred, Google
+                        Meet available.
+                    </p>
 
+                    <div class="contact-header-details">
                         <div class="contact-detail">
                             <div class="contact-detail-label">Location</div>
                             <div class="contact-detail-value">
@@ -2294,6 +2391,22 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="contact-layout">
+                    <div class="calendly-card">
+                        <div class="calendly-label">
+                            Book a 30 min time slot to get started
+                        </div>
+                        <iframe
+                            class="calendly-frame"
+                            src="https://calendly.com/debhansen38/30min?embed_type=Inline&embed_domain=embodiedactorsstudio.com&hide_gdpr_banner=1&hide_event_type_details=1&background_color=1a4d2e&text_color=ffffff&primary_color=7dd3c0"
+                            title="Schedule a session with Deb Hansen"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+
+                    <div class="contact-divider">OR</div>
 
                     <form
                         action="https://formspree.io/f/xwprdbkv"

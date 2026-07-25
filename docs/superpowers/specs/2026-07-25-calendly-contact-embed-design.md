@@ -19,7 +19,7 @@ iframe directly:
 
 ```html
 <iframe
-  src="https://calendly.com/debhansen38/30min?embed_type=Inline&embed_domain=embodiedactorsstudio.com&hide_gdpr_banner=1&background_color=1a4d2e&text_color=ffffff&primary_color=7dd3c0"
+  src="https://calendly.com/debhansen38/30min?embed_type=Inline&embed_domain=embodiedactorsstudio.com&hide_gdpr_banner=1&hide_event_type_details=1&background_color=1a4d2e&text_color=ffffff&primary_color=7dd3c0"
   width="100%" height="700" frameborder="0"
   title="Schedule a session with Deb Hansen"></iframe>
 ```
@@ -32,28 +32,36 @@ iframe directly:
   params. If it does not (plan-dependent theming), fall back to a light-card
   look and revisit.
 
-## Layout (right column of `.contact-layout`)
+## Layout (revised during implementation: header-on-top, side-by-side)
 
-The grid's second child becomes a wrapper div containing, in order:
+Original design stacked calendar/OR/form in the right column; user revised to
+the side-by-side option after seeing it in the browser. Final structure:
 
-1. **Calendar card** — frosted-glass styling matching `.contact-form`
-   (`rgba(255,255,255,0.05)` background, backdrop blur, 1px translucent
-   border, padding). Inside: a small teal uppercase label with the exact copy
-   **"Book a 30 min time slot to get started"** (styled like
-   `.contact-detail-label`), then the iframe.
-2. **OR divider** — flex row: thin `rgba(255,255,255,0.2)` lines either side
-   of "OR" in teal, uppercase, letter-spaced (matches detail-label styling).
-3. **Existing contact form** — moved inside the wrapper, otherwise untouched
-   (Formspree action, honeypot, fields all as-is).
+1. **`.contact-header`** — centered block on top: eyebrow ("Get Started"),
+   "Get In Touch" h2, intro paragraph ending with the exact copy
+   **"In person preferred, Google Meet available."**, then Location/Serving
+   details in a centered flex row (`.contact-header-details`).
+2. **`.contact-layout`** — grid `1fr auto 1fr`:
+   - **Calendar card** (left) — frosted-glass styling matching `.contact-form`
+     (`rgba(255,255,255,0.05)` background, backdrop blur, 1px translucent
+     border, padding). Inside: a teal uppercase label with the exact copy
+     **"Book a 30 min time slot to get started"**, then the iframe.
+   - **OR divider** (middle) — vertical: thin `rgba(255,255,255,0.2)` lines
+     above/below "OR" in teal, uppercase, letter-spaced; `align-self: stretch`.
+   - **Existing contact form** (right) — untouched (Formspree action,
+     honeypot, fields all as-is).
 
-Left column (`.contact-info`) unchanged.
+The iframe URL also includes `hide_event_type_details=1` — the user does not
+want the event's meeting address advertised on the page (it still appears
+inside the Calendly booking flow, which is acceptable).
 
 ## Responsive behavior
 
-The existing mobile breakpoint collapses `.contact-layout` to one column;
-stack order becomes info → calendar → OR → form. Iframe keeps `height: 700px`
-(min-width 320px is satisfied at all viewports) and scrolls internally.
-Verify the breakpoint still behaves with the new wrapper as the grid child.
+The existing mobile breakpoint collapses `.contact-layout` to one column
+(stack order: header → calendar → OR → form), flips the divider back to
+horizontal lines, and stacks the header details. Iframe keeps
+`height: 700px` (min-width 320px is satisfied at all viewports) and scrolls
+internally.
 
 ## Out of scope
 
