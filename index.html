@@ -251,34 +251,8 @@
             }
 
             /* Hero Section */
-            /* Golden Ticket Promo Banner */
-            .promo-banner {
-                margin-top: 85px;
-                background: linear-gradient(
-                    90deg,
-                    var(--gold-accent) 0%,
-                    #dbbf7e 50%,
-                    var(--gold-accent) 100%
-                );
-                color: var(--dark-green);
-                text-align: center;
-                padding: 0.9rem 1.5rem;
-                font-size: 0.9rem;
-                letter-spacing: 0.5px;
-            }
-
-            .promo-banner strong {
-                font-weight: 700;
-            }
-
-            .promo-banner a {
-                color: var(--dark-green);
-                font-weight: 600;
-                text-decoration: underline;
-                text-underline-offset: 3px;
-            }
-
             .hero {
+                margin-top: 85px;
                 min-height: calc(100vh - 85px);
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -1470,7 +1444,7 @@
             }
 
             @media (max-width: 768px) {
-                .promo-banner {
+                .hero {
                     margin-top: 75px;
                 }
 
@@ -1567,13 +1541,6 @@
                 </ul>
             </div>
         </nav>
-
-        <!-- Golden Ticket Banner -->
-        <div class="promo-banner">
-            <strong>Are you a Golden Ticket winner?</strong> Scroll down or
-            hit Contact above to
-            <a href="#contact">book your consultation for FREE today</a>
-        </div>
 
         <!-- Hero Section -->
         <section id="home" class="hero">
