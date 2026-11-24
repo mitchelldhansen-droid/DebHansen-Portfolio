@@ -1511,6 +1511,106 @@
                 }
             }
         </style>
+        <!-- Holiday 2026 gift offer styles. Remove after January 1, 2027,
+             along with the .eas-hol-bar and .eas-hol-ribbon markup. -->
+        <style>
+            /* Top announcement bar */
+            .eas-hol-bar {
+                display: block;
+                margin-top: 91px; /* measured height of the fixed nav on desktop */
+                padding: 0.6rem 1rem;
+                background: #1a4d2e;
+                color: #ffffff;
+                font-family: inherit;
+                font-size: 0.95rem;
+                line-height: 1.4;
+                text-align: center;
+                text-decoration: none;
+            }
+            .eas-hol-bar strong { color: #7dd3c0; font-weight: 600; }
+            .eas-hol-bar span { text-decoration: underline; text-underline-offset: 3px; }
+            .eas-hol-bar:hover span,
+            .eas-hol-bar:focus span { color: #7dd3c0; }
+
+            /* While the bar is on the page, it carries the fixed-nav offset
+               instead of the hero (same approach as the 2026 Golden Ticket bar).
+               Removing the bar restores the hero's own margin automatically. */
+            .eas-hol-bar + .hero { margin-top: 0; }
+
+            /* Compact ribbon in the packages section */
+            .eas-hol-ribbon {
+                margin: 2rem auto;
+                max-width: 960px;
+                padding: 1.4rem 1.75rem;
+                border-radius: 12px;
+                background: #1a4d2e;
+                color: #ffffff;
+                font-family: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1.5rem;
+                box-shadow: inset 0 -3px 0 #7dd3c0;
+            }
+            .eas-hol-ribbon h2 {
+                margin: 0 0 0.35rem;
+                font-size: 1.4rem;
+                line-height: 1.2;
+                font-weight: 600;
+                color: #ffffff;
+            }
+            .eas-hol-ribbon p {
+                margin: 0;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #e8f3ec;
+            }
+            .eas-hol-ribbon .eas-hol-fine {
+                margin-top: 0.4rem;
+                font-size: 0.82rem;
+                color: #b9d9c6;
+            }
+            .eas-hol-ribbon a {
+                flex-shrink: 0;
+                display: inline-block;
+                padding: 0.7rem 1.35rem;
+                border-radius: 999px;
+                background: #7dd3c0;
+                color: #12361f !important;
+                font-weight: 600;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+            .eas-hol-ribbon a:hover,
+            .eas-hol-ribbon a:focus { background: #a5e3d5; }
+
+            /* Between the hamburger breakpoint (1150px) and ~1266px the
+               "Embodied Actors Studio" brand wraps to two lines and the nav
+               grows to 133px. Range padded to 1300px for font differences. */
+            @media (min-width: 1151px) and (max-width: 1300px) {
+                .eas-hol-bar { margin-top: 133px; }
+            }
+
+            @media (max-width: 768px) {
+                .eas-hol-bar { margin-top: 83px; } /* measured nav height on phones */
+            }
+
+            /* On most phones (up to ~425px) the brand wraps again and the
+               nav grows to 125px. Padded to 440px for font differences. */
+            @media (max-width: 440px) {
+                .eas-hol-bar { margin-top: 125px; }
+            }
+
+            @media (max-width: 640px) {
+                .eas-hol-bar { font-size: 0.88rem; }
+                .eas-hol-ribbon {
+                    margin: 1.5rem 0.75rem;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- Skip Navigation Link for Accessibility -->
@@ -1542,6 +1642,10 @@
             </div>
         </nav>
 
+        <!-- Holiday 2026 top bar (remove after January 1, 2027) -->
+        <a class="eas-hol-bar" href="#packages">
+            <strong>Holiday gift offer:</strong> every package comes with a bonus through Jan 1. <span>See the offer</span>
+        </a>
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-image-side">
@@ -1887,6 +1991,16 @@
                     PayPal.
                 </p>
 
+                <!-- Holiday 2026 ribbon (remove after January 1, 2027) -->
+                <aside class="eas-hol-ribbon" aria-labelledby="eas-hol-ribbon-title">
+                    <div>
+                        <h2 id="eas-hol-ribbon-title">Give the gift of coaching this season</h2>
+                        <p>Every package comes with a bonus to use yourself or pass to anyone you choose: a free self-tape review or 15-minute consult with a Tune Up, a free half hour with Audition Prep or Monologue Duo, a free hour with coaching packages of 6+ hours, and a free guest pass or extra class with yoga.</p>
+                        <p class="eas-hol-fine">Through January 1, 2027. Bonuses can be used through May 31, 2027. Not redeemable for cash.</p>
+                    </div>
+                    <a href="#contact">Give a gift</a>
+                </aside>
+
                 <div class="packages-category">
                     <h3>Coaching</h3>
                     <div class="coaching-blurb">
@@ -1907,7 +2021,7 @@
                                 to performance feedback.
                             </p>
                             <div class="package-price">
-                                $55 / half hour | $100 / one hour
+                                $55 / half hour (by request) | $100 / one hour
                             </div>
                             <p class="package-availability">
                                 Spots available now
